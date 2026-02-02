@@ -1,2 +1,2 @@
-# MusicPlayer.github.io
+# Music Player
 Music Player
