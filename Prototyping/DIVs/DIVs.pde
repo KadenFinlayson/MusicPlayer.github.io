@@ -77,3 +77,31 @@ float TSTWidth = appWidth * 40 / paperWidth;
 float TSTHeight = appHeight * 20 / paperHeight;
 
 rect( TSTX, TSTY, TSTWidth, TSTHeight );
+
+float PSX = appWidth * 202.5 / paperWidth;
+float PSY = appHeight * 140 / paperHeight;
+float PSWidth = appWidth * 15 / paperWidth;
+float PSHeight = appHeight * 20 / paperHeight;
+
+rect( PSX, PSY, PSWidth, PSHeight );
+
+float ShuffleX = appWidth * 217.5 / paperWidth;
+float ShuffleY = appHeight * 140 / paperHeight;
+float ShuffleWidth = appWidth * 15 / paperWidth;
+float ShuffleHeight = appHeight * 20 / paperHeight;
+
+rect( ShuffleX, ShuffleY, ShuffleWidth, ShuffleHeight );
+
+float LoopX = appWidth * 232.5 / paperWidth;
+float LoopY = appHeight * 140 / paperHeight;
+float LoopWidth = appWidth * 15 / paperWidth;
+float LoopHeight = appHeight * 20 / paperHeight;
+
+rect( LoopX, LoopY, LoopWidth, LoopHeight );
+
+float NSX = appWidth * 247.5 / paperWidth;
+float NSY = appHeight * 140 / paperHeight;
+float NSWidth = appWidth * 15 / paperWidth;
+float NSHeight = appHeight * 20 / paperHeight;
+
+rect( NSX, NSY, NSWidth, NSHeight );
