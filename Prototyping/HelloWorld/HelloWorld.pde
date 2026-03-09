@@ -1,10 +1,16 @@
-println("Hello World");
+println("Black Olives");
 //
-print("Hello");
-print("World");
+print("Black");
+print("Olives");
+print("Black");
+print("Olives");
 //
-print("Hello");
-print("\tWorld");
+print("Black");
+print("\tOlives");
+print("\nBlack");
+println("Black Olives");
+print("\nOlives");
 //
-print("Hello");
-print("\nWorld");
+print("\tOlives");
+print("Black");
+print("\nOlives");
