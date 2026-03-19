@@ -28,7 +28,12 @@ float CurrentScreenY = appHeight * 10 / paperHeight;
 float CurrentScreenWidth = appWidth * 180 / paperWidth;
 float CurrentScreenHeight = appHeight * 130 / paperHeight;
 
-
-
+//Image: Aspect Ratio
+println( float(imageWidth1) / float(imageHeight1));
+//Ternary Operator for Aspect Ratio: GreatOne
+float image1AspectRatio_GreatOne = ( imageWidth1 > imageHeight1 ) ? float(imageWidth1) / float(imageHeight1) : float(imageHeight1) / float(imageWidth1);
+println(image1AspectRatio_GreatOne);
+float imageWidthAdjusted1 = CurrentScreenWidth;
+float imageHeightAdjusted1 = ( imageWidth1 >= CurrentScreenWidth ) ? imageWidthAdjusted1 * image1AspectRatio_GreatOne : imageWidthAdjusted1 / image1AspectRatio_GreatOne ; 
 rect( CurrentScreenX, CurrentScreenY, CurrentScreenWidth, CurrentScreenHeight );
-image( image1, CurrentScreenX, CurrentScreenY, CurrentScreenWidth, CurrentScreenHeight );
+image( image1, CurrentScreenX, CurrentScreenY, imageWidthAdjusted1, imageHeightAdjusted1 );
