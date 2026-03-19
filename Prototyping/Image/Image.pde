@@ -3,15 +3,16 @@
 //Display
 fullScreen();
 
-String upArrow = '..';
+String upArrow = "..";
 String dependenciesFolder = "Dependencies";
 String imagesFolder = "Images";
-String imagename =  "1089044435";
+String imageName1 =  "1089044435";
 String fileExension = ".jpg";
 String open = "/";
 
+//Concatenation
 String imageDirectory = upArrow + open + upArrow + open + dependenciesFolder + open + imagesFolder + open;
-String pathway1 = imageDirectory + imageName1 + fileExention;
+String pathway1 = imageDirectory + imageName1 + fileExension;
 
 PImage image1 = loadImage( pathway1 );
 int imageWidth1 = 700;
