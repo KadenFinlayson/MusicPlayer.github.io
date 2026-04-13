@@ -34,20 +34,30 @@ rect( SSTX, SSTY, SSTWidth, SSTHeight );
 rect( FSTX, FSTY, FSTWidth, FSTHeight );
 rect( CSTX, CSTY, CSTWidth, CSTHeight );
 
+String title = "Hello";
+
 println("Start of Console");
 String[] fontlist = PFont.list();
 printArray(fontlist);
 
 float fontSize = appHeight;
+println( fontSize );
 PFont font;
 String georgia = "Georgia";
 font = createFont(georgia, fontSize);
+
+float fontSizeGeorgia = 58; //fontsize for ~100%
+float divHeightGeorgia = CSTWidth;
+float GeorgiaAspectRatio = fontSizeGeorgia / divHeightGeorgia;
+fontSize = CSTWidth*GeorgiaAspectRatio;
+println( fontSize );
 
 color blackInk = #050000;
 color redInk = #9D1313;
 color whiteInk = #FFFFFF;
 color resetInk = whiteInk;
+fill(blackInk);
 
-
+textFont(font, fontSize);
 text( title, CSTX, CSTY, CSTWidth, CSTHeight );
 fill(resetInk);
