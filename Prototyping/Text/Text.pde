@@ -2,46 +2,52 @@
  */
 //Display
 fullScreen();
-
-String upArrow = "..";
-String dependenciesFolder = "Dependencies";
-String imagesFolder = "Images";
-String imageName1 =  "1089044435";
-String fileExension = ".jpg";
-String open = "/";
-
-//Concatenation
-String imageDirectory = upArrow + open + upArrow + open + dependenciesFolder + open + imagesFolder + open;
-String pathway1 = imageDirectory + imageName1 + fileExension;
-
-PImage image1 = loadImage( pathway1 );
-int imageWidth1 = 700;
-int imageHeight1 = 495;
-
 println(displayWidth, displayHeight);
 int appWidth = displayWidth;
 int appHeight = displayHeight;
+
 int paperWidth = 279;
 int paperHeight = 216;
-float CurrentScreenX = appWidth * 10 / paperWidth;
-float CurrentScreenY = appHeight * 10 / paperHeight;
-float CurrentScreenWidth = appWidth * 180 / paperWidth;
-float CurrentScreenHeight = appHeight * 130 / paperHeight;
 
-//Image: Aspect Ratio
-float image1AspectRatio_GreatOne = ( imageWidth1 > imageHeight1 ) ? float(imageWidth1) / float(imageHeight1) : float(imageHeight1) / float(imageWidth1);
-float imageWidthAdjusted1 = CurrentScreenWidth;
-if (  ) {
-} else {
-}
+float CSTX = appWidth * 10 / paperWidth;
+float CSTY = appHeight * 140 / paperHeight;
+float CSTWidth = appWidth * 75 / paperWidth;
+float CSTHeight = appHeight * 15 / paperHeight;
+
+float FSTX = appWidth * 225 / paperWidth;
+float FSTY = appHeight * 15 / paperHeight;
+float FSTWidth = appWidth * 40 / paperWidth;
+float FSTHeight = appHeight * 20 / paperHeight;
+
+float SSTX = appWidth * 225 / paperWidth;
+float SSTY = appHeight * 60 / paperHeight;
+float SSTWidth = appWidth * 40 / paperWidth;
+float SSTHeight = appHeight * 20 / paperHeight;
+
+float TSTX = appWidth * 225 / paperWidth;
+float TSTY = appHeight * 105 / paperHeight;
+float TSTWidth = appWidth * 40 / paperWidth;
+float TSTHeight = appHeight * 20 / paperHeight;
+
+rect( TSTX, TSTY, TSTWidth, TSTHeight );
+rect( SSTX, SSTY, SSTWidth, SSTHeight );
+rect( FSTX, FSTY, FSTWidth, FSTHeight );
+rect( CSTX, CSTY, CSTWidth, CSTHeight );
+
+println("Start of Console");
+String[] fontlist = PFont.list();
+printArray(fontlist);
+
+float fontSize = appHeight;
+PFont font;
+String georgia = "Georgia";
+font = createFont(georgia, fontSize);
+
+color blackInk = #050000;
+color redInk = #9D1313;
+color whiteInk = #FFFFFF;
+color resetInk = whiteInk;
 
 
-println( float(imageWidth1) / float(imageHeight1));
-//Ternary Operator for Aspect Ratio: GreatOne
-float image1AspectRatio_GreatOne = ( imageWidth1 > imageHeight1 ) ? float(imageWidth1) / float(imageHeight1) : float(imageHeight1) / float(imageWidth1);
-println(image1AspectRatio_GreatOne);
-float imageWidthAdjusted1 = CurrentScreenWidth;
-float imageHeightAdjusted1 = ( imageWidth1 >= CurrentScreenWidth ) ? imageWidthAdjusted1 * image1AspectRatio_GreatOne : imageWidthAdjusted1 / image1AspectRatio_GreatOne ;
-
-rect( CurrentScreenX, CurrentScreenY, CurrentScreenWidth, CurrentScreenHeight );
-image( image1, CurrentScreenX, CurrentScreenY, imageWidthAdjusted1, imageHeightAdjusted1 );
+text( title, CSTX, CSTY, CSTWidth, CSTHeight );
+fill(resetInk);
