@@ -40,17 +40,24 @@ println("Start of Console");
 String[] fontlist = PFont.list();
 printArray(fontlist);
 
-float fontSize = appHeight;
-println( fontSize );
+float fontSize1 = appHeight;
+float fontSize2 = appHeight;
+float fontSize3 = appHeight;
+float fontSize4 = appHeight;
+//println( fontSize );
 PFont font;
 String georgia = "Georgia";
-font = createFont(georgia, fontSize);
+font = createFont(georgia, fontSize1);
 
 float fontSizeGeorgia = 58; //fontsize for ~100%
-float divHeightGeorgia = CSTWidth;
+float divHeightGeorgia = CSTHeight;
 float GeorgiaAspectRatio = fontSizeGeorgia / divHeightGeorgia;
-fontSize = CSTWidth*GeorgiaAspectRatio;
-println( fontSize );
+float textAdjustment = 0.9;
+fontSize1 = CSTHeight*GeorgiaAspectRatio * textAdjustment;
+fontSize2 = FSTHeight*GeorgiaAspectRatio * textAdjustment;
+fontSize3 = SSTHeight*GeorgiaAspectRatio * textAdjustment;
+fontSize4 = TSTHeight*GeorgiaAspectRatio * textAdjustment;
+//println( fontSize );
 
 color blackInk = #050000;
 color redInk = #9D1313;
@@ -58,6 +65,26 @@ color whiteInk = #FFFFFF;
 color resetInk = whiteInk;
 fill(blackInk);
 
-textFont(font, fontSize);
+textAlign (CENTER, TOP); 
+// alignment values [ LEFT / CENTER / RIGHT ] and [ TOP / CENTER / BOTTOM / BASELINE ]
+textFont(font, fontSize1);
+while (textWidth(title) > CSTWidth) {
+  println("here1");
+}
 text( title, CSTX, CSTY, CSTWidth, CSTHeight );
+textFont(font, fontSize2);
+while (textWidth(title) > CSTWidth) {
+  println("here1");
+}
+text( title, FSTX, FSTY, FSTWidth, FSTHeight );
+textFont(font, fontSize3);
+while (textWidth(title) > CSTWidth) {
+  println("here1");
+}
+text( title, SSTX, SSTY, SSTWidth, SSTHeight );
+textFont(font, fontSize4);
+while (textWidth(title) > CSTWidth) {
+  println("here1");
+}
+text( title, TSTX, TSTY, TSTWidth, TSTHeight );
 fill(resetInk);
