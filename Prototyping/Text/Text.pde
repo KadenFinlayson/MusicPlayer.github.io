@@ -67,24 +67,65 @@ fill(blackInk);
 
 textAlign (CENTER, TOP); 
 // alignment values [ LEFT / CENTER / RIGHT ] and [ TOP / CENTER / BOTTOM / BASELINE ]
+
+float constantDecrease = 0.99;
+int iWhile=0;
 textFont(font, fontSize1);
 while (textWidth(title) > CSTWidth) {
-  println("here1");
+  println("while1");
+  iWhile++;
+  if ( iWhile>100 ) {
+    println("Infinite WHILE Loop");
+    exit();
+  }
+  fontSize1 *= constantDecrease;
+  textFont(font, fontSize1);
 }
+
 text( title, CSTX, CSTY, CSTWidth, CSTHeight );
+
 textFont(font, fontSize2);
-while (textWidth(title) > CSTWidth) {
-  println("here1");
+iWhile=0;
+textFont(font, fontSize2);
+while (textWidth(title) > FSTWidth) {
+  println("while1");
+  iWhile++;
+  if ( iWhile>100 ) {
+    println("Infinite WHILE Loop");
+    exit();
+  }
+  fontSize1 *= constantDecrease;
+  textFont(font, fontSize2);
 }
 text( title, FSTX, FSTY, FSTWidth, FSTHeight );
+
 textFont(font, fontSize3);
-while (textWidth(title) > CSTWidth) {
-  println("here1");
+iWhile=0;
+textFont(font, fontSize3);
+while (textWidth(title) > SSTWidth) {
+  println("while1");
+  iWhile++;
+  if ( iWhile>100 ) {
+    println("Infinite WHILE Loop");
+    exit();
+  }
+  fontSize1 *= constantDecrease;
+  textFont(font, fontSize3);
 }
 text( title, SSTX, SSTY, SSTWidth, SSTHeight );
+
 textFont(font, fontSize4);
-while (textWidth(title) > CSTWidth) {
-  println("here1");
+iWhile=0;
+textFont(font, fontSize4);
+while (textWidth(title) > TSTWidth) {
+  println("while1");
+  iWhile++;
+  if ( iWhile>100 ) {
+    println("Infinite WHILE Loop");
+    exit();
+  }
+  fontSize1 *= constantDecrease;
+  textFont(font, fontSize4);
 }
 text( title, TSTX, TSTY, TSTWidth, TSTHeight );
 fill(resetInk);
