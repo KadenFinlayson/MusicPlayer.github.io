@@ -29,6 +29,12 @@ float TSTY = appHeight * 105 / paperHeight;
 float TSTWidth = appWidth * 40 / paperWidth;
 float TSTHeight = appHeight * 20 / paperHeight;
 
+float DataX = appWidth * 140 / paperWidth;
+float DataY = appHeight * 10 / paperHeight;
+float DataWidth = appWidth * 40 / paperWidth;
+float DataHeight = appHeight * 130 / paperHeight;
+
+rect( DataX, DataY, DataWidth, DataHeight );
 rect( TSTX, TSTY, TSTWidth, TSTHeight );
 rect( SSTX, SSTY, SSTWidth, SSTHeight );
 rect( FSTX, FSTY, FSTWidth, FSTHeight );
@@ -44,6 +50,7 @@ float fontSize1 = appHeight;
 float fontSize2 = appHeight;
 float fontSize3 = appHeight;
 float fontSize4 = appHeight;
+float fontSize5 = appHeight;
 //println( fontSize );
 PFont font;
 String georgia = "Georgia";
@@ -57,6 +64,7 @@ fontSize1 = CSTHeight*GeorgiaAspectRatio * textAdjustment;
 fontSize2 = FSTHeight*GeorgiaAspectRatio * textAdjustment;
 fontSize3 = SSTHeight*GeorgiaAspectRatio * textAdjustment;
 fontSize4 = TSTHeight*GeorgiaAspectRatio * textAdjustment;
+fontSize5 = DataHeight*GeorgiaAspectRatio * textAdjustment;
 //println( fontSize );
 
 color blackInk = #050000;
@@ -128,4 +136,19 @@ while (textWidth(title) > TSTWidth) {
   textFont(font, fontSize4);
 }
 text( title, TSTX, TSTY, TSTWidth, TSTHeight );
+
+textFont(font, fontSize5);
+iWhile=0;
+textFont(font, fontSize5);
+while (textWidth(title) > DataWidth) {
+  println("while5");
+  iWhile++;
+  if ( iWhile>100 ) {
+    println("Infinite WHILE Loop");
+    exit();
+  }
+  fontSize1 *= constantDecrease;
+  textFont(font, fontSize5);
+}
+text( title, DataX, DataY, DataWidth, DataHeight );
 fill(resetInk);
