@@ -10,10 +10,17 @@ int paperWidth = 279;
 int paperHeight = 216;
 float CurrentScreenX = appWidth * 10 / paperWidth;
 float CurrentScreenY = appHeight * 10 / paperHeight;
-float CurrentScreenWidth = appWidth * 180 / paperWidth;
+float CurrentScreenWidth = appWidth * 140 / paperWidth;
 float CurrentScreenHeight = appHeight * 130 / paperHeight;
 
 rect( CurrentScreenX, CurrentScreenY, CurrentScreenWidth, CurrentScreenHeight );
+
+float DataX = appWidth * 140 / paperWidth;
+float DataY = appHeight * 10 / paperHeight;
+float DataWidth = appWidth * 40 / paperWidth;
+float DataHeight = appHeight * 130 / paperHeight;
+
+rect( DataX, DataY, DataWidth, DataHeight );
 
 float CSTX = appWidth * 10 / paperWidth;
 float CSTY = appHeight * 140 / paperHeight;
