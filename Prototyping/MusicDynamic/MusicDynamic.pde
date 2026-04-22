@@ -29,9 +29,9 @@ void setup() {
   String dependanciesFolder = "Dependencies";
   
   String[] songName = new String[numberOfSongs];
-  songName[0] = "";
-  songName[1] = "";
-  songName[2] = "";
+  songName[0] = "Sudno";
+  songName[1] = "Sonne";
+  songName[2] = "HTC";
   
   String songName1 = "Sudno";
   String soundEffect1 = "SpringDoor";
