@@ -20,43 +20,55 @@ void setup() {
   int appWidth = displayWidth;
   int appHeight = displayHeight;
 
-// music loading
+  // music loading
   minim = new Minim(this);
   String upArrow = "..";
   String open = "/";
   String musicFolder = "Music";
   String soundEffectsFolder = "Sound Effects";
   String dependanciesFolder = "Dependencies";
-  
+
   String[] songName = new String[numberOfSongs];
-  songName[0] = "Sudno";
-  songName[1] = "Sonne";
-  songName[2] = "HTC";
-  
+  songName[currentSong] = "Sudno";
+  currentSong++;
+  songName[currentSong] = "Sonne";
+  currentSong++;
+  songName[currentSong] = "HTC";
+  currentSong=0;
+
   String songName1 = "Sudno";
   String soundEffect1 = "SpringDoor";
   String fileExtension_mp3 = ".mp3";
 
   String musicDirectory = upArrow + open + upArrow + open + dependanciesFolder + open + musicFolder + open;
   String soundEffectsDirectory = upArrow + open +  upArrow + open +  dependanciesFolder + open + soundEffectsFolder + open;
-  String pathway = musicDirectory + songName1 + fileExtension_mp3;
-  println(pathway);
-  playList[currentSong ] = minim.loadFile( pathway );
+  String pathway;
+  for (int i=0; i<numberOfSongs; i++) {
+    pathway = musicDirectory + songName[i] + fileExtension_mp3;
+    playList[currentSong ] = minim.loadFile( pathway );
+  }
+
   pathway = soundEffectsDirectory + soundEffect1 + fileExtension_mp3;
-  println(pathway);
   soundEffects[currentSong] = minim.loadFile( pathway );
 
-  if ( playList[currentSong]==null || soundEffects[currentSong]==null ) {
-    println("The Play List or Sound Effects did not Load Properly");
-    printArray(playList);
-    printArray(soundEffects);
-  } else {
-    playList[currentSong].play();
-    printArray(playList);
+  for (int i=0; i<numberOfSongs; i++) {
+    if ( playList[i]==null ) {
+      println("The Play List did not Load Properly");
+      printArray(playList);
+      exit();
+    }
   }
+
+  if ( soundEffects[currentSong]==null ) {
+    println("The Sound Effects did not Load Properly");
+    printArray(soundEffects);
+    exit();
+  }
+  playList[currentSong].play();
 }//End Setup
 
 void draw() {
+  playList[currentSong].play();
 }
 
 void mousePressed() {
