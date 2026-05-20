@@ -187,6 +187,18 @@ float CloseHeight = appHeight * 10 / paperHeight;
 
 rect( CloseX, CloseY, CloseWidth, CloseHeight );
   
+  //text setup
+  
+  //text string variables
+  
+  //fontsize variables
+  
+  //2D music shapes
+  
+  //draw text - formatting, ink variables, font size adjustments and adjusted DIV variables
+  
+  //images and aspect ratios, include while loop
+  
 }
 
 void draw() {
