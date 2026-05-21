@@ -82,7 +82,7 @@ textFont(font, fontSize1);
 while (textWidth(title) > CSTWidth) {
   println("while1");
   iWhile++;
-  if ( iWhile>100 ) {
+  if ( iWhile>1000 ) { // Safety limit raised to 1000
     println("Infinite WHILE Loop");
     exit();
   }
@@ -96,13 +96,13 @@ textFont(font, fontSize2);
 iWhile=0;
 textFont(font, fontSize2);
 while (textWidth(title) > FSTWidth) {
-  println("while1");
+  println("while2");
   iWhile++;
-  if ( iWhile>100 ) {
+  if ( iWhile>1000 ) { // Safety limit raised to 1000
     println("Infinite WHILE Loop");
     exit();
   }
-  fontSize1 *= constantDecrease;
+  fontSize2 *= constantDecrease; // Fixed typo (was fontSize1)
   textFont(font, fontSize2);
 }
 text( title, FSTX, FSTY, FSTWidth, FSTHeight );
@@ -111,13 +111,13 @@ textFont(font, fontSize3);
 iWhile=0;
 textFont(font, fontSize3);
 while (textWidth(title) > SSTWidth) {
-  println("while1");
+  println("while3");
   iWhile++;
-  if ( iWhile>100 ) {
+  if ( iWhile>1000 ) { // Safety limit raised to 1000
     println("Infinite WHILE Loop");
     exit();
   }
-  fontSize1 *= constantDecrease;
+  fontSize3 *= constantDecrease; // Fixed typo (was fontSize1)
   textFont(font, fontSize3);
 }
 text( title, SSTX, SSTY, SSTWidth, SSTHeight );
@@ -126,13 +126,13 @@ textFont(font, fontSize4);
 iWhile=0;
 textFont(font, fontSize4);
 while (textWidth(title) > TSTWidth) {
-  println("while1");
+  println("while4");
   iWhile++;
-  if ( iWhile>100 ) {
+  if ( iWhile>1000 ) { // Safety limit raised to 1000
     println("Infinite WHILE Loop");
     exit();
   }
-  fontSize1 *= constantDecrease;
+  fontSize4 *= constantDecrease; // Fixed typo (was fontSize1)
   textFont(font, fontSize4);
 }
 text( title, TSTX, TSTY, TSTWidth, TSTHeight );
@@ -143,11 +143,11 @@ textFont(font, fontSize5);
 while (textWidth(title) > DataWidth) {
   println("while5");
   iWhile++;
-  if ( iWhile>100 ) {
+  if ( iWhile>1000 ) { // Safety limit raised to 1000
     println("Infinite WHILE Loop");
     exit();
   }
-  fontSize1 *= constantDecrease;
+  fontSize5 *= constantDecrease; // Fixed typo (was fontSize1)
   textFont(font, fontSize5);
 }
 text( title, DataX, DataY, DataWidth, DataHeight );
