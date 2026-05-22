@@ -2,6 +2,10 @@
  */
 //Display
 fullScreen();
+int appWidth = displayWidth;
+int appHeight = displayHeight;
+int paperWidth = 279;
+int paperHeight = 216;
 
 String upArrow = "..";
 String dependenciesFolder = "Dependencies";
@@ -15,33 +19,33 @@ String imageDirectory = upArrow + open + upArrow + open + dependenciesFolder + o
 String pathway1 = imageDirectory + imageName1 + fileExension;
 
 PImage image1 = loadImage( pathway1 );
-int imageWidth1 = 700;
-int imageHeight1 = 495;
+int imageWidth2 = 700;
+int imageHeight2 = 495;
 
-println(displayWidth, displayHeight);
-int appWidth = displayWidth;
-int appHeight = displayHeight;
-int paperWidth = 279;
-int paperHeight = 216;
 float CurrentScreenX = appWidth * 10 / paperWidth;
 float CurrentScreenY = appHeight * 10 / paperHeight;
 float CurrentScreenWidth = appWidth * 180 / paperWidth;
 float CurrentScreenHeight = appHeight * 130 / paperHeight;
 
 //Image: Aspect Ratio
-float image1AspectRatio_GreatOne = ( imageWidth1 > imageHeight1 ) ? float(imageWidth1) / float(imageHeight1) : float(imageHeight1) / float(imageWidth1);
-float imageWidthAdjusted1 = CurrentScreenWidth;
-if (  ) {
+float image2AspectRatio_GreatOne = ( imageWidth2 > imageHeight2 ) ? float(imageWidth2) / float(imageHeight2) : float(imageHeight2) / float(imageWidth2);
+float imageWidthAdjusted2 = CurrentScreenWidth;
+float imageHeightAdjusted1;
+
+if ( imageWidth2 >= CurrentScreenWidth ) {
+  imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRatio_GreatOne;
+  while ( imageHeightAdjusted1 > CurrentScreenHeight ) {
+    imageWidthAdjusted2 *= 0.99;
+    imageHeightAdjusted1 = imageWidthAdjusted2 / image2AspectRatio_GreatOne ; 
+  }
+
 } else {
+  imageHeightAdjusted1 = imageWidthAdjusted2 * image2AspectRatio_GreatOne;
+  while ( imageHeightAdjusted1 > CurrentScreenHeight ) {
+    imageWidthAdjusted2 *= 0.99;
+    imageHeightAdjusted1 = imageWidthAdjusted2 * image2AspectRatio_GreatOne ; 
+  }
 }
 
-
-println( float(imageWidth1) / float(imageHeight1));
-//Ternary Operator for Aspect Ratio: GreatOne
-float image1AspectRatio_GreatOne = ( imageWidth1 > imageHeight1 ) ? float(imageWidth1) / float(imageHeight1) : float(imageHeight1) / float(imageWidth1);
-println(image1AspectRatio_GreatOne);
-float imageWidthAdjusted1 = CurrentScreenWidth;
-float imageHeightAdjusted1 = ( imageWidth1 >= CurrentScreenWidth ) ? imageWidthAdjusted1 * image1AspectRatio_GreatOne : imageWidthAdjusted1 / image1AspectRatio_GreatOne ;
-
-rect( CurrentScreenX, CurrentScreenY, CurrentScreenWidth, CurrentScreenHeight );
-image( image1, CurrentScreenX, CurrentScreenY, imageWidthAdjusted1, imageHeightAdjusted1 );
+rect(CurrentScreenX, CurrentScreenY, CurrentScreenWidth, CurrentScreenHeight);
+image(image1, CurrentScreenX, CurrentScreenY, imageWidthAdjusted2, imageHeightAdjusted1);
