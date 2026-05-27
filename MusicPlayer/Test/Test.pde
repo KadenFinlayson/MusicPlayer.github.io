@@ -294,7 +294,7 @@ void setup() {
 
   song1 = minim.loadFile(absoluteAudioFolder + "Sudno.mp3");
   song2 = minim.loadFile(absoluteAudioFolder + "Sonne.mp3");
-  song3 = minim.loadFile(absoluteAudioFolder + "HtC.mp3");
+  song3 = minim.loadFile(absoluteAudioFolder + "HTC.mp3");
 
   currentAudio = song1;
   
